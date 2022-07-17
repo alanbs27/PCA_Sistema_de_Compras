@@ -1,0 +1,26 @@
+input {
+    font-size: 20px;
+}
+input[type=number]::-webkit-inner-spin-button { 
+  width: 30px;
+  height: 50px;
+  margin: 17px;
+  padding: 5px;
+  transform: rotate(90deg);
+  filter: sepia(100%) hue-rotate(90deg);
+  cursor: pointer;
+}
+
+button,adicionar1 {
+    font-size: 20px;
+}
+
+#btn_all {
+  background:#069cc2; 
+  border-radius:6px;
+  padding: 15px;
+  cursor:pointer;
+  color:darkblue;
+  border:none;
+  font-size:16px;
+}

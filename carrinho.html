@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrinho</title>
+	<link rel="stylesheet" type="text/css" href="CSS/input.css">
+</head>
+<body>
+<center>	
+<div>
+	<h2>Você pode verificar o total das suas compras</h2>
+	<h2>ou pode voltar a área de compras e continuar comprando</h2>
+</div>
+</center>
+<div id="itens"> </div>
+<div>Total: <span id="total"></span> </div>
+
+<script>
+ var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+ var i = 0;     // variável que irá percorrer as posições
+ var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+ var produtos = 'produtos'
+ for(i=0; i< produtos.length; i++)
+ { 
+ 
+	var produtos = localStorage.getItem('produtos'); 
+	if(produtos != null){ 
+	 
+		produtos = JSON.parse(produtos);
+							                                              
+		document.getElementById("itens").innerHTML += produtos[i].quantidade ;
+		document.getElementById("itens").innerHTML += " " + produtos[i].nome_produto;
+		document.getElementById("itens").innerHTML += " ";
+		document.getElementById("itens").innerHTML += "valor " + produtos[i].valor.toFixed(2)+" "+"<hr>";
+			
+		valor = parseFloat(produtos[i].valor);//("valor" + i)); // valor convertido com o parseFloat()
+		total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+	}
+ } 
+ 
+document.getElementById("total").innerHTML = total.toFixed(2); 
+ 
+</script>
+<center>
+<div>
+	<br><button id="btn_all"onclick="localStorage.clear(); location.reload();"> Limpar carrinho </button>
+	<br>
+	<br><a href="index.html"><button id="btn_all">Voltar a compras</button>  </a>
+	<br>
+	<br><a href="login.html"><button id= "btn_all" onclick="compras_fim();">Finalizar compras</button>  </a>
+	<br>
+	<!--<br><input id="btn_all" type="button" value="Lista de Compras" onclick="window.open('compras.html','_self')">-->
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    
+</head>
+<body>
+  <center>
+  <div style="font-size:40px">
+      <h2>Seja bem vindo,
+      digite seu cpf abaixo, utilize as setas do teclado</h2>
+  </div>
+  </center>
+    <center>
+    <form action="index.html" id="formu" >
+        <label style="font-size:30px;"for="cpf"></label>
+        <input style="font-size:30px;"type="text" value="" id="campo_cpf" placeholder="Digite aqui apenas Números e tecle enter">
+        <input style="font-size:30px;"type="submit" onclick="Salvar_cpf(document.getElementById('campo_cpf').value)">
+    </form>
+    </center>
+<script>
+    function Salvar_cpf(cpf_user)
+    {
+        localStorage.setItem("cpf_user1",cpf_user);
+        alert('cpf salvo com sucesso');
+    }
+
+</script>
+
+</body>
+<script type="text/javascript" src="js/login.js"></script>
+</html>

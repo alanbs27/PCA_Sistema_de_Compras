@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compras</title>
+	<link rel="stylesheet" type="text/css" href="CSS/input.css">
+	
+</head>
+<body>
+<center>
+<div>
+	<h2>Seja bem vindo ao nosso mercado, para começar utilize o botões ao lado para 
+		navegar na tela e efetuar suas compras
+	</h2>
+</div>
+</center>
+<center>
+<div>
+	<b>Sabão <strong>2,00 reais</strong><br>
+	<b>quantidade: <input type="number" value="1" autofocus min=0 max="10" id='qtd1'>
+	<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Sabão', document.getElementById('qtd1').value, '2.00')"> Comprar </button>
+</div>
+</center>
+<center>
+<div>
+	<br>Macarrão <strong>3,90 reais</strong><br>
+	quantidade: <input type="number" value="1" autofocus min=0 max="10" id='qtd2'>
+	<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Macarrão', document.getElementById('qtd2').value, '3.90')"> Comprar </button>
+</div>
+</center>
+<center>
+<div>
+	<br>Feijão <strong>11,90 reais</strong><br>
+	quantidade: <input value="1" autofocus min=0 max="10" id='qtd3' type="number">
+	<button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Feijão', document.getElementById('qtd3').value, '11.90')"> Comprar </button>
+</div>
+</center>
+<center>
+<br><p>
+	<a href="carrinho.html"><button id= "btn_all">Ver Carrinho de compras</button>  </a>
+</p>	
+</center>		
+<script>
+	function AddCarrinho(produto, qtd, valor,) {
+		valor = valor * qtd;
+		let novoProduto = {nome_produto:produto, quantidade:qtd, valor:valor};
+		
+		if (typeof(Storage) !== "undefined"){
+			let produtos = localStorage.getItem("produtos");
+			if (produtos == null) produtos = [];
+			else produtos = JSON.parse(produtos);
+			produtos.push(novoProduto);
+			localStorage.setItem("produtos", JSON.stringify(produtos))
+			//alert("Produto adicionado ao carrinho!");
+		}
+		else alert("A versão do seu navegador é antiga!");
+	}
+</script>
+</body>
+</html>
