@@ -5,4 +5,6 @@
 ![image](https://user-images.githubusercontent.com/73205402/232176818-f09a9c9e-cf03-4dfc-af36-d09760def4ac.png)
 
 ## Tela da lista de compras
+![image](https://user-images.githubusercontent.com/73205402/232176848-b3394dfd-2272-4f34-9c34-ecac1e538cb5.png)
+
 ## Verificação do carrinho de compras com a soma totala dos itens
